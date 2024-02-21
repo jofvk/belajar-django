@@ -1,0 +1,50 @@
+CATATAN
+
+Bikin virtual environment
+ - python -m venv (nama env)
+ - (nama env)\Scripts\activate
+
+   Set-ExecutionPolicy RemoteSigned
+
+Install Django
+ - pip Install django
+
+Membuat project
+ - django-admin startproject (nama project)
+Run
+ - python manage.py runserver
+
+Membuat app
+ - cd /Project_Baru
+ - python manage.py startapp (nama app)
+
+Hasil direktori:
+Project_Baru
+    manage.py
+    Project_Baru/
+    App_Baru/
+        migrations/
+            __init__.py
+        __init__.py
+        admin.py
+        apps.py
+        models.py
+        tests.py
+        views.py
+
+Buat file urls.py baru di app
+- Isi dengan path yang akan ditampilkan
+  Contoh :
+
+  from django.urls import path, include
+from . import views
+
+# app_name = 'pertama'
+
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('blog/', views.blog, name='blog'),
+    
+]
+
+edit file views.py
